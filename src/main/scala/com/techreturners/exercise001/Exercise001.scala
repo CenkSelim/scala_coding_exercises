@@ -11,7 +11,11 @@ class Exercise001 {
 
   def generateInitials(firstName: String, lastName: String) = firstName.substring(0,1).toUpperCase() + "." + lastName.substring(0,1).toUpperCase()
 
-  def addVat(initialPrice: Double, interestRate: Double) : Double = 0.0
+  def addVat(initialPrice: Double, interestRate: Double) : Double = {
+    // May need refactoring - best find at the moment
+    val vat = BigDecimal(initialPrice * interestRate / 100).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+    initialPrice + vat
+  }
 
   def reverse(sentence: String) : String = ""
 
