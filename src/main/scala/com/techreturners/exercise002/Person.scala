@@ -1,5 +1,4 @@
 package com.techreturners.exercise002
 
-class Person {
+case class Person (firstname: String, lastname: String, city: String, age: Int)
 
-}
