@@ -11,11 +11,7 @@ class Exercise001 {
 
   def generateInitials(firstName: String, lastName: String) = firstName.substring(0,1).toUpperCase() + "." + lastName.substring(0,1).toUpperCase()
 
-  def addVat(initialPrice: Double, interestRate: Double) : Double = {
-    // May need refactoring - best find at the moment
-    val vat = BigDecimal(initialPrice * interestRate / 100).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
-    initialPrice + vat
-  }
+  def addVat(initialPrice: Double, interestRate: Double) : Double = initialPrice + BigDecimal(initialPrice * interestRate / 100).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
 
   def reverse(sentence: String) : String = sentence.reverse
 
@@ -26,12 +22,5 @@ class Exercise001 {
    * @param users A collection of users
    * @return
    */
-  def countLinuxUsers(users: Seq[User]): Int = {
-    var numberOfUsers = 0
-    if (users == null || users.isEmpty ){
-    }else {
-      numberOfUsers = users.filter(_.osType=="Linux").length
-    }
-    numberOfUsers
-  }
+  def countLinuxUsers(users: Seq[User]): Int = if (users == null || users.isEmpty ) 0 else users.filter(_.osType=="Linux").length
 }
