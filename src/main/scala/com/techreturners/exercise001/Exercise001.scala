@@ -27,8 +27,11 @@ class Exercise001 {
    * @return
    */
   def countLinuxUsers(users: Seq[User]): Int = {
-    // Add your code here
-    0
+    var numberOfUsers = 0
+    if (users == null || users.isEmpty ){
+    }else {
+      numberOfUsers = users.filter(_.osType=="Linux").length
+    }
+    numberOfUsers
   }
-
 }
