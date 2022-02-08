@@ -18,7 +18,7 @@ class Exercise001Test extends AnyFlatSpec {
     assert(exercise001.capitalizeWord("oh no, bears!!!") == "Oh no, bears!!!")
   }
 
-  "A persons name" should "be reduced to initials" ignore {
+  "A persons name" should "be reduced to initials" in {
     assert(exercise001.generateInitials("Frederic", "Bonneville") == "F.B")
     assert(exercise001.generateInitials("Karl", "Marx") == "K.M")
   }
