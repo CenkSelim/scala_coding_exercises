@@ -65,4 +65,15 @@ class Exercise001Test extends AnyFlatSpec {
     assert(exercise001.countLinuxUsers(null) == 0)
   }
 
+  it should "return the correct amount of linux users when the collection does not contain any Linux users" in {
+    val users = Seq(
+      User("Heather", "Windows 10", "Windows"),
+      User("Paul", "Windows 95", "Windows"),
+      User("Sheila", "CentOS 7", "AOS"),
+      User("Pedro", "Ubuntu 18.04", "AOS")
+    )
+
+    assert(exercise001.countLinuxUsers(users) == 0)
+  }
+
 }
