@@ -1,7 +1,7 @@
 package com.techreturners.exercise003
 
 class Exercise003 {
-  
+
   val flavours = Array("Pistachio",
     "Raspberry Ripple",
     "Vanilla",
@@ -12,8 +12,6 @@ class Exercise003 {
 
   def getIceCreamCode(iceCreamFlavour: String): Int = flavours.indexWhere( _ == iceCreamFlavour)
 
-  def iceCreamFlavours: Array[String] = {
-    throw new UnsupportedOperationException("You can delete this line and add your code here.")
-  }
+  def iceCreamFlavours: Array[String] = flavours
 
 }
