@@ -26,4 +26,8 @@ class Exercise003Test extends AnyFlatSpec {
 
     assert(exercise003.iceCreamFlavours sameElements flavours)
   }
+
+  "A Melon Sorbet ice cream" should "not be correctly identified and the code returned" in {
+    assert(exercise003.getIceCreamCode("Melon Sorbet") == -1)
+  }
 }
